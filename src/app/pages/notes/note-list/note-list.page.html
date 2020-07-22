@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>note-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size="6" *ngFor="let note of noteList">
+        <ion-card [color]="note.color" routerLink="/note-details/{{note.id}}">
+          <ion-card-header>
+            <ion-card-subtitle>
+              {{ note.title }}
+            </ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" routerLink="/note-form">
+      Nouvelle note
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button defaultHref="/home" slot="start"></ion-back-button>
+    <ion-title>settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-label position="stacked">Couleur preféré</ion-label>
+  <ion-select [(ngModel)]="userPref.preferedColor" (ionChange)="settingsservice.save()">
+    <ion-select-option value="danger">Rouge</ion-select-option>
+    <ion-select-option value="primary">Bleu</ion-select-option>
+    <ion-select-option value="success">Vert</ion-select-option>
+    <ion-select-option value="warning">Orange</ion-select-option>
+    <ion-select-option value="dark">Noir</ion-select-option>
+  </ion-select>
+</ion-content>

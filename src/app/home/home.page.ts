@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SettingsService, SettingsInterface } from '../services/settings.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  public userPref: SettingsInterface = {preferedColor: 'danger'} ;
+
+  constructor(public settings: SettingsService) {}
+
+  async ionViewWillEnter(){
+    this.userPref = await (await this.settings.getNotes());
+  }
+
+  async ngOnInit() {
+    this.userPref = await (await this.settings.getNotes());
+  }
 
 }

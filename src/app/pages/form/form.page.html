@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-img src="/assets/img/pommes.jpg"></ion-img>
+
+    <ion-card-header>
+      <ion-item>
+        <ion-label>
+          <ion-card-title>Fiche</ion-card-title>
+        </ion-label>
+        <ion-chip color="danger" slot="end">
+          <ion-label>5</ion-label>
+        </ion-chip>
+
+        <ion-badge slot="end">
+          34
+        </ion-badge>
+      </ion-item>
+      
+    </ion-card-header>
+
+    <ion-card-content>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis laborum numquam
+      voluptate fuga, totam, eligendi nihil nostrum enim beatae, sint provident unde
+      possimus aperiam ipsum corrupti porro aliquid quos quibusdam!
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="stacked">Votre nom</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Votre age</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>profession</ion-label>
+      <ion-select multiple="true" cancelText="Va crever" okText="Super">
+        <ion-select-option>Développeur</ion-select-option>
+        <ion-select-option>Graphiste</ion-select-option>
+        <ion-select-option>Chef de projet</ion-select-option>
+        <ion-select-option selected>Architecte</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-radio-group>
+      <ion-list-header>Sexe</ion-list-header>
+      <ion-item>
+        <ion-label>Femme</ion-label>
+        <ion-radio value="F" slot="start" checked="checked"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Homme</ion-label>
+        <ion-radio value="M" slot="start"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <ion-item>
+      <ion-label>Luminosité</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-range min="20" max="80" step="10" pin="true" t icks="true" snaps="true">
+        <ion-icon slot="start" name="sunny" color="success">
+        </ion-icon>
+        <ion-icon slot="end" name="sunny" color="danger">
+        </ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>remember me</ion-label>
+      <ion-toggle slot="end" color="warning"></ion-toggle>
+    </ion-item>
+
+
+  </ion-list>
+</ion-content>

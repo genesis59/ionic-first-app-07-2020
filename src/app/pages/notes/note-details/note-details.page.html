@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>note-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+      <ion-icon slot="end" [color]="note.color" name="square"></ion-icon>
+      <ion-card-title>{{ note.title }}</ion-card-title>
+    </ion-item>
+      
+      <ion-card-content>
+        {{ note.text }}
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="4">
+          <ion-button expand="block" routerLink="/note-form/{{ note.id }}">Modifier</ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button expand="block" color="danger" (click)="deleteNote()">Supprimer</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>  
+  </ion-toolbar>
+</ion-footer>

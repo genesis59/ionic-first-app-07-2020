@@ -1,20 +1,100 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+
+
+  <ion-toolbar color="primary">
     <ion-title>
       Blank
     </ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="warning" mode="md">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button color="warning" mode="md">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button color="danger" mode="md" >
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-button slot="end" routerLink="/settings">
+      <ion-icon name="settings" slot="icon-only"></ion-icon>
+    </ion-button>
   </ion-toolbar>
+
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-button routerLink="/animals" expand="block" [color]="userPref.preferedColor">Jeu des animaux</ion-button>
+  <p>
+    Hello
+    <ion-icon name="star" color="danger"></ion-icon>
+  </p>
+  <ion-button expand="full" color="danger" mode="ios" shape="round">Mon bouton</ion-button>
+
+
+  <ion-list>
+    <ion-list-header>Fruits</ion-list-header>
+
+    <ion-item-sliding>
+
+      <ion-item>
+
+        <ion-thumbnail slot="start">
+          <ion-img src="/assets/img/pommes.jpg"></ion-img>
+        </ion-thumbnail>
+
+        <ion-label>
+          <h4>Pommes</h4>
+          <p>de Normandie</p>
+        </ion-label>
+
+        <ion-button color="danger" slot="end">
+          <ion-icon name="logo-apple" slot="icon-only"></ion-icon>
+        </ion-button>
+
+      </ion-item>
+
+      <ion-item-options side="end">
+
+        <ion-item-option>
+          <ion-button color="danger" slot="end">
+            <ion-icon name="logo-apple" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-item-option>
+        
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+
+    <ion-item-group>
+      <ion-item-divider>A</ion-item-divider>
+      <ion-item>abricots</ion-item>
+      <ion-item>ananas</ion-item>
+    </ion-item-group>
+
+    <ion-item-group>
+      <ion-item-divider>B</ion-item-divider>
+      <ion-item>bananes</ion-item>
+      <ion-item>brugnons</ion-item>
+    </ion-item-group>
+  </ion-list>
+<ion-button expand="block" routerLink="/hello/Jane">
+  Hello Jane
+</ion-button>
+<ion-button expand="block" routerLink="/hello/Bob">
+  Hello Bob
+</ion-button>
+
 </ion-content>
+
+
+<ion-footer>
+
+  <ion-toolbar color="success">
+    <ion-title>Hello</ion-title>
+  </ion-toolbar>
+
+</ion-footer>

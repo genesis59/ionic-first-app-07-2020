@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>angular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label [color]="favoriteColor">Bonjour {{ name }} </ion-label>
+  <ion-label [color]="favoriteColor">Bonjour {{ names[2] }}</ion-label>
+  <p> Cinq plus deux égal {{ 5 + 2 }}</p>
+
+  <h3>Bonjour {{ person.firstName}} {{ person.name}}</h3>
+
+  <ion-item>
+    <ion-label position="stacked">Votre nom</ion-label>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="addName()">
+    Ajouter cette personne
+  </ion-button>
+
+  <ion-button (click)="doClick()">
+    Cliquez moi
+  </ion-button>
+
+  <ion-button expand="block" (click)="showHideForm()" [color]="showCalc?'danger':'success'">
+    <!--   {{showCalc?'Afficher':'Masquer'}} le formulaire   -->
+    {{formulaire}}
+  </ion-button>
+
+  <div *ngIf="showCalc">
+    <ion-item>
+      <ion-label>Celsius à convertir</ion-label>
+      <ion-input type="number" [(ngModel)]="celsius"></ion-input>
+    </ion-item>
+    <ion-button (click)="CelsiuToFarenheit()">
+      Calculer
+    </ion-button>
+    <ion-item>
+      <ion-label>Farenheit = {{farenheit}}</ion-label>
+    </ion-item>
+  </div>
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let item of names; let pos = index; let prems = first">
+      <ion-item>
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-button (click)="deleteName(pos)" size="small" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+
+
+</ion-content>
